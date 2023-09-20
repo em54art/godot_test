@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://crw4m4prjnq5f"]
+[gd_scene load_steps=43 format=3 uid="uid://crw4m4prjnq5f"]
 
 [ext_resource type="Script" path="res://code/player2.gd" id="1_1n4a5"]
 [ext_resource type="Texture2D" uid="uid://b7es7korarnmc" path="res://player/spritesheet_idle.png" id="2_nhvw2"]
@@ -99,7 +99,7 @@ tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(1, 1)]
 }
 tracks/7/type = "value"
@@ -123,7 +123,7 @@ tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(-28, 7)]
 }
 tracks/9/type = "value"
@@ -135,7 +135,19 @@ tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("wateratk/Area2D/CollisionShape2D:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
 "values": [0.0]
 }
 
@@ -160,12 +172,119 @@ _data = {
 radius = 25.0
 height = 74.0
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wsfcc"]
+animation = &"idle_f"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0wm57"]
+animation = &"idle_b"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c1s15"]
+animation = &"idle_r"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5qd1r"]
+animation = &"idle_l"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_xu4i0"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_wsfcc")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_0wm57")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_c1s15")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_5qd1r")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ghad6"]
+animation = &"walk_b"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mxc5s"]
+animation = &"walk_f"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3otx1"]
+animation = &"walk_r"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rwiiq"]
+animation = &"walk_l"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_lv11p"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ghad6")
+blend_point_0/pos = Vector2(0, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_mxc5s")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_3otx1")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_rwiiq")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3g3ng"]
+animation = &"wateratk_b"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wmwc5"]
+animation = &"wateratk_f"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n0ced"]
+animation = &"wateratk_r"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ljjx"]
+animation = &"wateratk_l"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_v6q03"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_3g3ng")
+blend_point_0/pos = Vector2(0, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_wmwc5")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_n0ced")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_2ljjx")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kk5sg"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xacd5"]
+advance_mode = 2
+advance_condition = &"attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nqhhp"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2t8y3"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5qd5n"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f56b7"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_apymu"]
+advance_mode = 2
+advance_condition = &"attack"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4hutn"]
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_xu4i0")
+states/idle/position = Vector2(418, 100)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_lv11p")
+states/walk/position = Vector2(630, 92)
+states/water_atk/node = SubResource("AnimationNodeBlendSpace2D_v6q03")
+states/water_atk/position = Vector2(530, 10)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_kk5sg"), "idle", "water_atk", SubResource("AnimationNodeStateMachineTransition_xacd5"), "water_atk", "idle", SubResource("AnimationNodeStateMachineTransition_nqhhp"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_2t8y3"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_5qd5n"), "water_atk", "walk", SubResource("AnimationNodeStateMachineTransition_f56b7"), "walk", "water_atk", SubResource("AnimationNodeStateMachineTransition_apymu")]
+graph_offset = Vector2(0, -67.6113)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4t4ld"]
 size = Vector2(45, 20)
 
 [node name="player" type="CharacterBody2D"]
+position = Vector2(90, 81)
 motion_mode = 1
 script = ExtResource("1_1n4a5")
 
@@ -186,6 +305,12 @@ shape = SubResource("CapsuleShape2D_740k2")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_4hutn")
 anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/attack = false
+parameters/conditions/idle = false
+parameters/conditions/is_moving = false
+parameters/idle/blend_position = Vector2(0.00170648, 0.967078)
+parameters/walk/blend_position = Vector2(0, 0)
+parameters/water_atk/blend_position = Vector2(0, 0)
 
 [node name="wateratk" type="Sprite2D" parent="."]
 position = Vector2(1, 1)
