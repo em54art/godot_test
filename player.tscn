@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://crw4m4prjnq5f"]
+
+[ext_resource type="Script" path="res://code/player2.gd" id="1_1n4a5"]
+[ext_resource type="Texture2D" uid="uid://b7es7korarnmc" path="res://player/spritesheet_idle.png" id="2_nhvw2"]
+
+[sub_resource type="Animation" id="Animation_kd0rn"]
+resource_name = "idle_f"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6q3he"]
+_data = {
+"idle_f": SubResource("Animation_kd0rn")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_740k2"]
+radius = 25.0
+height = 74.0
+
+[node name="player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_1n4a5")
+
+[node name="body" type="Sprite2D" parent="."]
+texture = ExtResource("2_nhvw2")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6q3he")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 7)
+shape = SubResource("CapsuleShape2D_740k2")

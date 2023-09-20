@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cglahrrp1qv4s"]
+[gd_scene load_steps=4 format=3 uid="uid://cglahrrp1qv4s"]
 
 [ext_resource type="TileSet" uid="uid://b44mflfke5k6f" path="res://main_tileset.tres" id="1_h3ft8"]
 [ext_resource type="TileSet" uid="uid://c4n33anqn83gk" path="res://main_tileset_fg.tres" id="2_3ymmi"]
+[ext_resource type="PackedScene" uid="uid://crw4m4prjnq5f" path="res://player.tscn" id="3_jaos1"]
 
 [node name="current_scene" type="Node2D"]
 
@@ -15,3 +16,6 @@ tile_set = ExtResource("2_3ymmi")
 cell_quadrant_size = 64
 format = 2
 layer_0/tile_data = PackedInt32Array(196617, 196608, 1, 131081, 196608, 0, 131082, 262144, 0, 131080, 131072, 0, 196615, 65536, 1, 327689, 0, 1, 262150, 0, 1)
+
+[node name="player" parent="." instance=ExtResource("3_jaos1")]
+position = Vector2(484, 364)
