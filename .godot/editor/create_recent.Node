@@ -1,6 +1,8 @@
-AnimationTree
+ColorRect
 CollisionShape2D
-AnimationPlayer
+Area2D
 Sprite2D
+AnimationTree
+AnimationPlayer
 CharacterBody2D
 TileMap
