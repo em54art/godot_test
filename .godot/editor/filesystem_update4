@@ -3,3 +3,14 @@ res://main_tileset.tres
 res://main_tileset_fg.tres
 res://player.tscn
 res://code/player2.gd
+res://animationplayer_saves/idle_f.res
+res://animationplayer_saves/idle_r.res
+res://animationplayer_saves/idle_l.res
+res://animationplayer_saves/idle_b.res
+res://animationplayer_saves/wateratk_f.res
+res://animationplayer_saves/wateratk_b.res
+res://animationplayer_saves/wateratk_l.res
+res://animationplayer_saves/wateratk_r.res
+res://animationplayer_saves/walk_b.res
+res://animationplayer_saves/walk_f.res
+res://animationplayer_saves/walk_l.res
