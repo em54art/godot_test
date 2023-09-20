@@ -3,11 +3,10 @@
 
 currently in scene:
 - tile map
+- player
 ___________
 
 need to do:
--player movement
--player animation (walk, idle, attack)
 -player atk collision
 -rock signals 
 ___________
