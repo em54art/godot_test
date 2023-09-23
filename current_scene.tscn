@@ -3,8 +3,8 @@
 [ext_resource type="TileSet" uid="uid://b44mflfke5k6f" path="res://main_tileset.tres" id="1_h3ft8"]
 [ext_resource type="TileSet" uid="uid://c4n33anqn83gk" path="res://main_tileset_fg.tres" id="2_3ymmi"]
 [ext_resource type="PackedScene" uid="uid://crw4m4prjnq5f" path="res://player.tscn" id="3_jaos1"]
-[ext_resource type="Texture2D" uid="uid://mpbxursibw7" path="res://object/bush.png" id="4_5rpir"]
 [ext_resource type="PackedScene" uid="uid://by04ho211gn60" path="res://resource_rock.tscn" id="4_oim23"]
+[ext_resource type="PackedScene" uid="uid://12i1rplj1jvw" path="res://resource_bush_2.tscn" id="6_1bn0d"]
 
 [node name="current_scene" type="Node2D"]
 y_sort_enabled = true
@@ -32,11 +32,10 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="resource_rock" parent="." instance=ExtResource("4_oim23")]
 
-[node name="Bush" type="Sprite2D" parent="."]
-position = Vector2(416, 302)
-texture = ExtResource("4_5rpir")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(484, 364)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="resource_bush2" parent="." instance=ExtResource("6_1bn0d")]
+position = Vector2(402, 249)

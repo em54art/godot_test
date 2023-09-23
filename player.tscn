@@ -325,3 +325,5 @@ script = ExtResource("16_rkqv4")
 position = Vector2(-28, 7)
 shape = SubResource("RectangleShape2D_4t4ld")
 disabled = true
+
+[connection signal="body_entered" from="wateratk/Area2D" to="wateratk" method="_on_area_2d_body_entered"]

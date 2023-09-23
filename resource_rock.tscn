@@ -1,17 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://by04ho211gn60"]
+[gd_scene load_steps=4 format=3 uid="uid://by04ho211gn60"]
 
+[ext_resource type="Script" path="res://resource_rock.gd" id="1_ord5r"]
 [ext_resource type="Texture2D" uid="uid://dsrk82xtqqnoj" path="res://object/rock1.png" id="1_s18bw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_br8ma"]
-radius = 17.0
-height = 34.0
+radius = 19.0
+height = 52.0
 
 [node name="resource_rock" type="StaticBody2D"]
 position = Vector2(606, 401)
+script = ExtResource("1_ord5r")
 
 [node name="Rock1" type="Sprite2D" parent="."]
 texture = ExtResource("1_s18bw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 6)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_br8ma")

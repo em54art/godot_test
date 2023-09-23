@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://12i1rplj1jvw"]
+
+[ext_resource type="Texture2D" uid="uid://mpbxursibw7" path="res://object/bush.png" id="1_0xyoq"]
+[ext_resource type="Script" path="res://resource_bush_2.gd" id="1_5j1q0"]
+[ext_resource type="Animation" uid="uid://dcrc36h4crmol" path="res://animationplayer_saves/touch_b.res" id="3_0psld"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lxnuj"]
+radius = 20.2237
+
+[sub_resource type="Animation" id="Animation_c706t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_0xyoq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8xw4e"]
+_data = {
+"RESET": SubResource("Animation_c706t"),
+"touch": ExtResource("3_0psld")
+}
+
+[node name="resource_bush2" type="Area2D"]
+script = ExtResource("1_5j1q0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 2)
+texture = ExtResource("1_0xyoq")
+offset = Vector2(-2, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_lxnuj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8xw4e")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
