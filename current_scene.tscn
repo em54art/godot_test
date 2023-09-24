@@ -1,16 +1,16 @@
 [gd_scene load_steps=8 format=3 uid="uid://cglahrrp1qv4s"]
 
+[ext_resource type="Script" path="res://current_scene.gd" id="1_1c414"]
 [ext_resource type="TileSet" uid="uid://b44mflfke5k6f" path="res://main_tileset.tres" id="1_h3ft8"]
-[ext_resource type="Script" path="res://current_scene.gd" id="1_vdukq"]
 [ext_resource type="TileSet" uid="uid://c4n33anqn83gk" path="res://main_tileset_fg.tres" id="2_3ymmi"]
 [ext_resource type="PackedScene" uid="uid://crw4m4prjnq5f" path="res://player.tscn" id="3_jaos1"]
 [ext_resource type="PackedScene" uid="uid://by04ho211gn60" path="res://resource_rock.tscn" id="4_oim23"]
 [ext_resource type="PackedScene" uid="uid://12i1rplj1jvw" path="res://resource_bush_2.tscn" id="6_1bn0d"]
-[ext_resource type="PackedScene" uid="uid://nnl4h4d212w4" path="res://pause_menu.tscn" id="6_m7ssw"]
+[ext_resource type="PackedScene" uid="uid://cyc8qmn7pitxq" path="res://pause_menu.tscn" id="6_fetpv"]
 
 [node name="current_scene" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_vdukq")
+script = ExtResource("1_1c414")
 
 [node name="main_background" type="TileMap" parent="."]
 scale = Vector2(1.07821, 1.00465)
@@ -45,10 +45,9 @@ position = Vector2(402, 249)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="pause_menu" parent="CanvasLayer" node_paths=PackedStringArray("game_manager") instance=ExtResource("6_m7ssw")]
-visible = false
-offset_left = -160.0
-offset_top = -80.0
-offset_right = 87.0
-offset_bottom = 110.0
+[node name="pause_menu" parent="CanvasLayer" node_paths=PackedStringArray("game_manager") instance=ExtResource("6_fetpv")]
+offset_left = -163.0
+offset_top = -74.0
+offset_right = 84.0
+offset_bottom = 116.0
 game_manager = NodePath("../..")

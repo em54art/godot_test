@@ -1,6 +1,4 @@
 res://current_scene.tscn
 res://main_tileset.tres
 res://main_tileset_fg.tres
-res://pause_menu.gd
 res://pause_menu.tscn
-res://current_scene.gd
