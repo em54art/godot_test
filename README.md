@@ -7,9 +7,11 @@ currently in scene:
 ___________
 
 need to do:
-
+-tilemap spawn
+-crafting
+-pause menu
 ___________
 
 currently doing:
--pause menu
--rock signals 
+-rock code
+
