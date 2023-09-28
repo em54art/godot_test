@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://crw4m4prjnq5f"]
+[gd_scene load_steps=46 format=3 uid="uid://crw4m4prjnq5f"]
 
 [ext_resource type="Script" path="res://code/player2.gd" id="1_1n4a5"]
 [ext_resource type="Texture2D" uid="uid://b7es7korarnmc" path="res://player/spritesheet_idle.png" id="2_nhvw2"]
@@ -16,6 +16,8 @@
 [ext_resource type="Animation" uid="uid://c5sucjn52rgu5" path="res://animationplayer_saves/walk_r.res" id="14_ob2qy"]
 [ext_resource type="Texture2D" uid="uid://c1i1limui0vlp" path="res://player/water_atk_edit.png" id="15_0plyd"]
 [ext_resource type="Script" path="res://code/EquipSprite.gd" id="16_rkqv4"]
+[ext_resource type="Resource" uid="uid://bwsiy6267827i" path="res://item/minable.tres" id="17_7ci8e"]
+[ext_resource type="Script" path="res://inventory.gd" id="18_1in4x"]
 
 [sub_resource type="Animation" id="Animation_aswa5"]
 length = 0.001
@@ -318,6 +320,7 @@ position = Vector2(1, 1)
 texture = ExtResource("15_0plyd")
 hframes = 5
 script = ExtResource("16_rkqv4")
+effected_nodes = Array[Resource("res://item/ResourceNodeType.gd")]([ExtResource("17_7ci8e")])
 
 [node name="Area2D" type="Area2D" parent="wateratk"]
 
@@ -325,5 +328,8 @@ script = ExtResource("16_rkqv4")
 position = Vector2(-28, 7)
 shape = SubResource("RectangleShape2D_4t4ld")
 disabled = true
+
+[node name="inventory" type="Node" parent="."]
+script = ExtResource("18_1in4x")
 
 [connection signal="body_entered" from="wateratk/Area2D" to="wateratk" method="_on_area_2d_body_entered"]

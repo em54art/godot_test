@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://b44mflfke5k6f"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b44mflfke5k6f"]
 
 [ext_resource type="Texture2D" uid="uid://cq311g7v2uhag" path="res://tiles/tile_map_lrg1.png" id="1_q5frx"]
 
@@ -79,10 +79,6 @@ texture_region_size = Vector2i(64, 64)
 7:7/0 = 0
 8:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lkvf5"]
-texture_region_size = Vector2i(64, 64)
-
 [resource]
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_ysb66")
-sources/1 = SubResource("TileSetAtlasSource_lkvf5")

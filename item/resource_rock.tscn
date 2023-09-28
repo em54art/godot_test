@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://by04ho211gn60"]
+
+[ext_resource type="Script" path="res://item/resource_rock.gd" id="1_nlwhc"]
+[ext_resource type="Resource" uid="uid://bwsiy6267827i" path="res://item/minable.tres" id="2_044km"]
+[ext_resource type="Texture2D" uid="uid://dsrk82xtqqnoj" path="res://object/rock1.png" id="2_dgqv3"]
+[ext_resource type="PackedScene" uid="uid://ba5dvstdkdtup" path="res://object/pickups/pickup_rock.tscn" id="3_170f1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_br8ma"]
+radius = 19.0
+height = 52.0
+
+[node name="resource_rock" type="StaticBody2D"]
+z_index = 2
+position = Vector2(606, 401)
+script = ExtResource("1_nlwhc")
+node_types = Array[Resource("res://item/ResourceNodeType.gd")]([ExtResource("2_044km")])
+starting_resources = 5
+pickup_type = ExtResource("3_170f1")
+
+[node name="Rock1" type="Sprite2D" parent="."]
+texture = ExtResource("2_dgqv3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_br8ma")
