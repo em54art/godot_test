@@ -4,8 +4,8 @@ class_name rock_type
 @export var node_types: Array[ResourceNodeType]
 @export var starting_resources : int = 1
 @export var pickup_type: PackedScene
-@export var launch_speed : float = 100
-@export var launch_duration: float = 0.25
+@export var launch_speed : float = 150
+@export var launch_duration: float = 0.40
 
 @onready var level_parent = get_parent()
 

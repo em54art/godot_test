@@ -1,6 +1,10 @@
-res://current_scene.tscn
+res://object/pickups/pickup_rock.tscn
 res://main_tileset.tres
 res://main_tileset_fg.tres
+res://object/resource_display.tscn
+res://current_scene.tscn
 res://player.tscn
 res://item/resource_rock.tscn
-res://object/pickups/pickup_rock.tscn
+res://object/object_UI/ResourceItemDisplay.gd
+res://object/object_UI/resource_display.gd
+res://inventory.gd

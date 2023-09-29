@@ -286,7 +286,7 @@ graph_offset = Vector2(0, -67.6113)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4t4ld"]
 size = Vector2(45, 20)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(90, 81)
 motion_mode = 1
 script = ExtResource("1_1n4a5")
@@ -294,6 +294,9 @@ script = ExtResource("1_1n4a5")
 [node name="body" type="Sprite2D" parent="."]
 texture = ExtResource("2_nhvw2")
 hframes = 4
+
+[node name="inventory" type="Node2D" parent="."]
+script = ExtResource("18_1in4x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -328,8 +331,5 @@ effected_nodes = Array[Resource("res://item/ResourceNodeType.gd")]([ExtResource(
 position = Vector2(-28, 7)
 shape = SubResource("RectangleShape2D_4t4ld")
 disabled = true
-
-[node name="inventory" type="Node" parent="."]
-script = ExtResource("18_1in4x")
 
 [connection signal="body_entered" from="wateratk/Area2D" to="wateratk" method="_on_area_2d_body_entered"]

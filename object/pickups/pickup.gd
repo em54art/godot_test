@@ -2,6 +2,7 @@ extends Area2D
 class_name pickup
 
 @export var resource_type : Resource
+
 @onready var collison_shape : CollisionShape2D = $CollisionShape2D
 
 var launch_velocity: Vector2 = Vector2.ZERO
@@ -11,7 +12,6 @@ var time_since_launch : float = 0
 var launching : bool = false:
 	set(is_launching):
 		launching = is_launching
-		
 		collison_shape.disabled = launching
 
 func _ready():
@@ -33,13 +33,15 @@ func launch(velocity: Vector2, duration: float):
 	launching = true
 	
 func _on_body_entered(body : Node2D):
-	var inventory = body.find_child("_Inventory")
+	
+	print(body.get_child(1))
+	#checks node, not class name
+	var inventory = body.find_child("inventory")
 	
 	if(inventory):
 		print("found")
 		inventory.add_resources(resource_type, 1)
 		queue_free()
-	else:
-		print("not found")
+
 		
 	#https://www.youtube.com/watch?v=4i-mIbO1P2U&list=PLyH-qXFkNSxlANk9EwZmbtECBfbHeW68-&index=8&t=709s

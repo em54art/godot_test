@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cglahrrp1qv4s"]
+[gd_scene load_steps=9 format=3 uid="uid://cglahrrp1qv4s"]
 
 [ext_resource type="Script" path="res://current_scene.gd" id="1_1c414"]
 [ext_resource type="TileSet" uid="uid://b44mflfke5k6f" path="res://main_tileset.tres" id="1_h3ft8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://by04ho211gn60" path="res://item/resource_rock.tscn" id="4_oim23"]
 [ext_resource type="PackedScene" uid="uid://12i1rplj1jvw" path="res://item/resource_bush_2.tscn" id="6_1bn0d"]
 [ext_resource type="PackedScene" uid="uid://cyc8qmn7pitxq" path="res://pause_menu.tscn" id="6_fetpv"]
+[ext_resource type="PackedScene" uid="uid://ctsa03jq3jmqs" path="res://object/resource_display.tscn" id="7_58t50"]
 
 [node name="current_scene" type="Node2D"]
 y_sort_enabled = true
@@ -52,6 +53,8 @@ offset_top = -74.0
 offset_right = 84.0
 offset_bottom = 116.0
 game_manager = NodePath("../..")
+
+[node name="ResourceDisplay" parent="CanvasLayer" instance=ExtResource("7_58t50")]
 
 [node name="resource_rock" parent="." instance=ExtResource("4_oim23")]
 position = Vector2(653, 485)
