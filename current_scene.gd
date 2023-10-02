@@ -4,18 +4,12 @@ extends Node2D
 class_name current_scene
 
 signal toggle_game_paused(is_paused : bool)
-var mynode = preload("res://item/resource_bush_2.tscn")
 
 
 func _ready():
-	inst(Vector2(700,400))
+	pass
 
-#instance bush method
-func inst(pos):
-	var instace = mynode.instantiate()
-	instace.position = pos
-	add_child(instace)
-	
+
 #pause menu (figure out what happens in the code)
 var game_paused : bool = false:
 	get:

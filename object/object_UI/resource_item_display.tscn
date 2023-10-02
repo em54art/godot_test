@@ -1,17 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6hoch0vsd4w2"]
 
 [ext_resource type="Script" path="res://object/object_UI/ResourceItemDisplay.gd" id="1_5av5s"]
-[ext_resource type="Texture2D" uid="uid://8ij2oso7sois" path="res://object/object_UI/inv_container_UI.png" id="2_er4hc"]
+[ext_resource type="Texture2D" uid="uid://ct300w5xc41pt" path="res://object/rock.png" id="2_m4nf2"]
 
 [node name="ResourceItemDisplay" type="HBoxContainer"]
 script = ExtResource("1_5av5s")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2_er4hc")
+texture = ExtResource("2_m4nf2")
+expand_mode = 2
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-theme_override_font_sizes/font_size = 66
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
 text = "0"

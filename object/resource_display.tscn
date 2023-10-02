@@ -1,20 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctsa03jq3jmqs"]
+[gd_scene load_steps=3 format=3 uid="uid://ctsa03jq3jmqs"]
 
 [ext_resource type="Script" path="res://object/object_UI/resource_display.gd" id="1_fsf2p"]
+[ext_resource type="PackedScene" uid="uid://b6hoch0vsd4w2" path="res://object/object_UI/resource_item_display.tscn" id="2_gisrr"]
 
-[node name="ResourceDisplay" type="GridContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 5
-script = ExtResource("1_fsf2p")
-item_display_template = null
-
-[node name="DisplayContainer" type="MarginContainer" parent="."]
-layout_mode = 2
+[node name="ResourceDisplay" type="MarginContainer"]
+offset_right = 156.0
+offset_bottom = 114.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("1_fsf2p")
+item_display_template = ExtResource("2_gisrr")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2

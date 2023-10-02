@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cglahrrp1qv4s"]
+[gd_scene load_steps=10 format=3 uid="uid://cglahrrp1qv4s"]
 
 [ext_resource type="Script" path="res://current_scene.gd" id="1_1c414"]
 [ext_resource type="TileSet" uid="uid://b44mflfke5k6f" path="res://main_tileset.tres" id="1_h3ft8"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://12i1rplj1jvw" path="res://item/resource_bush_2.tscn" id="6_1bn0d"]
 [ext_resource type="PackedScene" uid="uid://cyc8qmn7pitxq" path="res://pause_menu.tscn" id="6_fetpv"]
 [ext_resource type="PackedScene" uid="uid://ctsa03jq3jmqs" path="res://object/resource_display.tscn" id="7_58t50"]
+[ext_resource type="PackedScene" uid="uid://c27fl4qm6q7ty" path="res://object/pickups/pickup_bushfluff.tscn" id="9_asme0"]
 
 [node name="current_scene" type="Node2D"]
 y_sort_enabled = true
@@ -40,10 +41,6 @@ position = Vector2(605, 380)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="resource_bush2" parent="." instance=ExtResource("6_1bn0d")]
-visible = false
-position = Vector2(396, 240)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="pause_menu" parent="CanvasLayer" node_paths=PackedStringArray("game_manager") instance=ExtResource("6_fetpv")]
@@ -58,3 +55,10 @@ game_manager = NodePath("../..")
 
 [node name="resource_rock" parent="." instance=ExtResource("4_oim23")]
 position = Vector2(653, 485)
+
+[node name="resource_bush2" parent="." instance=ExtResource("6_1bn0d")]
+z_index = 2
+position = Vector2(396, 240)
+
+[node name="pickup_rock" parent="." instance=ExtResource("9_asme0")]
+position = Vector2(522, 298)

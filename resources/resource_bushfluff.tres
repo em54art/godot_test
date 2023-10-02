@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://co8gleqc2na5d"]
+
+[ext_resource type="Script" path="res://resources/resource_item.gd" id="1_1b5yb"]
+[ext_resource type="Texture2D" uid="uid://1pggmv1dysgm" path="res://object/bush_2.png" id="2_rphpp"]
+
+[resource]
+resource_name = "bush_fluff"
+script = ExtResource("1_1b5yb")
+display_name = "bush_fluff"
+texture = ExtResource("2_rphpp")

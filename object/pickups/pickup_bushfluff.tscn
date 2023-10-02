@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c27fl4qm6q7ty"]
+
+[ext_resource type="Script" path="res://object/pickups/pickup.gd" id="1_idiwg"]
+[ext_resource type="Resource" uid="uid://co8gleqc2na5d" path="res://resources/resource_bushfluff.tres" id="2_p5ouy"]
+[ext_resource type="Texture2D" uid="uid://1pggmv1dysgm" path="res://object/bush_2.png" id="3_t8p8m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ho75"]
+radius = 15.0
+
+[node name="pickup_rock" type="Area2D"]
+z_index = 1
+script = ExtResource("1_idiwg")
+resource_type = ExtResource("2_p5ouy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_t8p8m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_6ho75")
