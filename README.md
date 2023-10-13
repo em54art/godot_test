@@ -12,11 +12,11 @@
 <li>player</li>
 </ul>
 
-need to do:
--tilemap spawn
--crafting
--pause menu
-___________
+<ul>need to do:
+<li>tilemap spawn</li>
+<li>crafting</li>
+<li>pause menu</li>
+</ul>
 
 currently doing:
 -rock code
