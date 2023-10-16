@@ -7,17 +7,10 @@
 </ul>
 
 <h3>What currently is in the game</h3>
-<ul>currently in scene:
+<p>currently in scene:</p>
+<ul>
 <li>tile map</li>
 <li>player</li>
 </ul>
 
-<ul>need to do:
-<li>tilemap spawn</li>
-<li>crafting</li>
-<li>pause menu</li>
-</ul>
-
-currently doing:
--rock code
 
